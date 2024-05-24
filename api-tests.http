@@ -1,0 +1,46 @@
+# Get all requests
+GET http://localhost:7137/requests
+Content-Type: application/json
+
+###
+
+# Get a specific request by ID
+GET http://localhost:7137/requests/1
+Content-Type: application/json
+
+###
+
+# Create a new request
+POST http://localhost:7137/requests
+Content-Type: application/json
+
+{
+  "Id": 2,
+  "StartDate": "2023-09-25",
+  "OrgTechType": "Printer",
+  "OrgTechModel": "Canon LBP6230dw",
+  "ProblemDescription": "Printing issue",
+  "ClientFIO": "Ivan Ivanov",
+  "ClientNumber": "89001112233",
+  "RequestStatus": "v processe remonta"
+}
+
+###
+
+# Update an existing request
+PUT http://localhost:7137/requests/2
+Content-Type: application/json
+
+{
+  "Master": "Ivan Petrov",
+  "ProblemDescription": "Printing issue - requires maintenance",
+  "RequestStatus": "gotova k vydachi",
+  "Comment": "Fixed",
+  "RepairParts": "Ink Cartridge"
+}
+
+###
+
+# Get statistics
+GET http://localhost:7137/statistics
+Content-Type: application/json
